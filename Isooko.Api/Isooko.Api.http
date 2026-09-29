@@ -1,0 +1,6 @@
+@Isooko.Api_HostAddress = http://localhost:5144
+
+GET {{Isooko.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

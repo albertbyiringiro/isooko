@@ -1,0 +1,28 @@
+# Emporium
+
+**Rather Splendid Shopping.**
+
+Emporium is an e-commerce platform built for people who haven't shopped online before — starting in East Africa. Most e-commerce is designed for people who already trust the internet with their money. Emporium is designed for the person buying online for the first time: someone's mother, someone's aunt, someone who has always bought from a person, not a screen, and needs the screen to feel just as trustworthy.
+
+The name is a joke with a purpose: "Emporium" sounds grand and foreign on purpose, so that the experience of actually using it — plain language, few steps, no jargon — can be the pleasant surprise. Splendid shopping shouldn't require you to already be a tech person.
+
+## Who this is for
+
+- First-time online shoppers, particularly women in East Africa who have historically been underserved by e-commerce built for other markets
+- Anyone for whom "just add it to your cart" is not obvious, because no one ever explained what a cart is
+
+## Stack
+
+.NET 10, ASP.NET Core, EF Core + PostgreSQL, Stripe (payments), Docker, Next.js (frontend, [Epic 8](epics/EPIC-8-frontend.md)), pgvector (semantic search, [Epic 9](epics/EPIC-9-semantic-search.md)). See [`epics/EPIC-0-platform-foundations.md`](epics/EPIC-0-platform-foundations.md) for the core API stack and why each piece is there.
+
+## On AI
+
+Emporium uses AI once, deliberately: [semantic search](epics/EPIC-9-semantic-search.md), so the search bar understands what someone means, not just what they typed. It does **not** use a conversational or agentic checkout, even though that's the current e-commerce trend elsewhere. For someone shopping online for the first time, a chatbot at checkout adds a new, unfamiliar thing to trust exactly where trust matters most — paying. Semantic search improves an interaction the user already understands; a shopping chatbot would ask them to learn a new one. Given who this is for, that's not a close call.
+
+## Status
+
+Not yet built. This repo currently holds the plan (`epics/`) — the code comes next, one epic at a time, committed and pushed as it's built.
+
+## License
+
+MIT — see [`LICENSE`](LICENSE).
