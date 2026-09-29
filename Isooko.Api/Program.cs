@@ -1,3 +1,4 @@
+using FluentValidation;
 using Isooko.Api.Common;
 using Isooko.Api.Data;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -11,6 +12,8 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
+
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 builder.Services.AddDbContext<IsookoDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("IsookoConnection")));
